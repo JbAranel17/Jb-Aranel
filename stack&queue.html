@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Stack & Queue Data Structure</title>
+</head>
+
+<body>
+<script type="text/javascript">
+
+// ------------ STACK --------------
+	class Stack {
+		constructor() {
+		    this.collection  = {}
+		    this.num = 0
+		}		
+			
+		push(item) {
+            this.num++
+			this.collection[this.num] = item
+		}
+			
+		pop(){
+			let remove = this.collection[this.num]
+			delete this.collection[this.num]
+            this.num--
+			return remove
+		}
+			
+		peek() {
+			return this.collection[this.num]
+        }
+	}
+
+	const stack = new Stack()
+			
+	stack.push('Item 1')
+	stack.push('Item 2')
+	stack.push('Item 3')
+
+			
+    console.log(stack)
+
+    console.log(stack.pop()) 
+
+    console.log(stack.peek())	
+
+
+
+
+
+
+
+
+// ------------ QUEUE --------------
+    class Queue {
+        constructor() {
+        this.collections = {}
+        this.head = 0 
+        this.tail = 0
+        }
+        
+        enqueue(items) {
+        this.collections[this.tail] = items
+        this.tail++
+        }
+        
+        dequeue() {
+        let remove = this.collections[this.head]
+        delete this.collections[this.head]
+        this.head++
+        return remove
+        }
+    }
+
+    const queue = new Queue()
+
+    queue.enqueue('Collection 1')
+    queue.enqueue('Collection 2')
+    queue.enqueue('Collection 3')
+
+
+    console.log(queue)
+
+    console.log(queue.dequeue())
+	
+</script>
+
+</body>
+</html>
+
